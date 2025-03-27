@@ -1,0 +1,25 @@
+
+.skills {
+    grid-area: Skills;
+    @include flex_center;
+    /* This makes sure the section will be at least the viewport height, 
+    but extend vertically when items stack on top of each other on mobile screen */
+    min-height: 110vh;
+    background-color: $background_color-dark;
+    color: $font_color-light;
+
+
+    &__content-box {
+        @include flex_center;
+        flex-wrap: wrap;
+        text-align: center;
+
+        /*Responsive*/
+        @media (max-width: 1000px) {
+            padding: 60px 0;
+        }
+    }
+
+}
+
+

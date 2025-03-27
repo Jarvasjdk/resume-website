@@ -1,0 +1,9 @@
+.grid-container {
+    grid-template-areas: 'Header'
+                         'Banner'
+                         'Skills'
+                         'Projects'
+                         'Timeline'
+                         'Contact'
+                         'Footer';
+}

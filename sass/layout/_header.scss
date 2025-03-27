@@ -1,0 +1,172 @@
+/* flexbox container */
+.header {
+    grid-area: Header;
+}
+
+.nav-bar {
+    @include flex_center;
+    background-color: $background_color-dark;
+    /* Fixed nav-bar */
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+
+    /* This creates the effect that the nav bar grows */
+    transition: all 0.5s ease-in-out;
+    padding: 20px 40px;
+    border-radius: 0 0 4px 4px;
+
+    &__link {
+        color: $font_color-light;
+        text-decoration: none;
+        font-size: 17px;
+        /* Using margin for nav item instead of padding size allows the hover effect to appear right below the element */
+        margin: 15px 20px;
+        border-radius: 4px;
+        /* In order to use absolute position on the blue-bar pseudo-elements */
+        position: relative;
+
+        /* HOVER EFFECT on nav links */
+        /* Create pseudo-elements. Position a blue bar right below each nav links. Another hard-coded bar */
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            left: 0;
+            bottom: -5px;
+            background: linear-gradient(145deg, #daf6ff, #7d9da8);
+            border-radius: 12px;
+            /* Pseudo-element Hidden at first */
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: all 0.5s ease-in-out;
+        }
+        &:hover::before {
+            transform: scale(1);
+        }
+        // Based on user scroll position, the 'current' class is toggled for nav links
+        &.current::before {
+            transform: scale(1);
+        }
+
+        &--logo {
+            /* There's no justify-self in flexbox, this is the workaround to justify a single flexbox item */
+            /* This also pushes the rest of the nav links to the end, so it can act like justify-content: flex-end; in this case */
+            margin-right: auto;
+            font-weight: bolder;
+            font-size: 35px;
+            font-family: $logo_font;
+
+            /* The logo is not supposed to have hover effects */
+            &:hover::before {
+                transform: scale(0);
+            }
+        }
+        &--hamburger {
+            // Hidden until mobile device screen width
+            display: none;
+            /* The hamburger is not supposed to have hover effects */
+            &:hover::before {
+                transform: scale(0);
+            }
+        }
+    }
+
+    // ANIMATION (When users scroll down, the sticky class is toggled for nav-bar)
+    &.sticky {
+        background-color: $background_color-light;
+        /* This creates the effect that the nav bar shrinks */
+        padding: 0 80px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+
+        .nav-bar__link {
+            color: $font_color-dark;
+            /* Decrease the nav items size when scroll down */
+            margin: 12px 20px;
+
+            &::before {
+                background: $font_color-dark;
+            }
+
+            &--logo {
+                margin-right: auto;
+            }
+        }
+
+        .hamburger-btn {
+            background-color: $font_color-dark;
+
+            &::before,
+            &::after {
+                background-color: $font_color-dark;
+            }
+        }
+    }
+
+    // ANIMATION (When the hamburger is clicked, the responsive class is toggled for nav-bar)
+    &.responsive .hamburger-btn {
+        transform: translateX(-30px);
+        background: transparent;
+
+        &::before {
+            transform: rotate(45deg) translate(20px, -20px);
+        }
+        &::after {
+            transform: rotate(-45deg) translate(20px, 20px);
+        }
+    }
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+    .nav-bar {
+        padding-left: 0;
+        padding-right: 0;
+
+        &__link:not(.nav-bar__link--logo):not(.nav-bar__link--hamburger) {
+            display: none;
+        }
+
+        &__link--hamburger {
+            display: block;
+            margin: 0;
+            /* This makes the whole hamburger clickable, not just the three thin bars */
+            padding: 20px;
+        }
+
+        &.sticky {
+            padding-left: 0;
+            padding-right: 0;
+
+            .nav-bar__link--hamburger {
+                margin: 0;
+            }
+        }
+        &.responsive {
+            flex-direction: column;
+
+            .nav-bar__link:not(.nav-bar__link--logo) {
+                text-align: center;
+            }
+            .nav-bar__link:not(.nav-bar__link--hamburger) {
+                /* To override the display: none; so the other nav links reappear */
+                display: block;
+                width: 100%;
+            }
+            .nav-bar__link--hamburger {
+                /* Setting a position to an element allows us to use top, bottom, left, and right to move an element,
+                which are useful when we want to position an element relative to a container, ex. Hamburger in a
+                nav-bar needs to be at the top right corner of the container */
+                position: absolute;
+                top: 32px;
+                right: 16px;
+            }
+            /* Adjust the hamburger position after transform */
+            &.sticky .nav-bar__link--hamburger {
+                top: 9px;
+                right: 16px;
+            }
+        }
+    }
+}

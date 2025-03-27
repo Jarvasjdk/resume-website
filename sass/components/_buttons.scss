@@ -1,0 +1,58 @@
+.btn {
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 1rem;
+    transition: all 0.2s;
+
+    &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 1rem 2rem rgba(black, 0.21);
+    }
+    &:active {
+        transform: translateY(-0.1rem);
+        box-shadow: 0 0.5rem 1rem rgba(black, 0.21);
+    }
+
+    &--see-project,
+    &--view-work-experience {
+        background: $background-color-light;
+        color: $font_color-dark-strong;
+        display: inline-block;
+
+        margin-top: 3rem;
+        padding: 10px 25px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    &--view-work-experience {
+        background: $background-color-dark;
+        color: $font_color-light;
+        border: 1px solid $font_color-light;
+        margin-left: 1.5rem;
+    }
+
+    &--src-code {
+        background-color: $background-color-dark;
+        color: $font_color-light;
+
+        padding: 10px;
+        font-size: 12px;
+        font-weight: 400;
+
+        &:hover {
+            background-color: rgb(67, 67, 67);
+        }
+    }
+
+    &--send-message {
+        background-color: darken($icon_color_main, 10%);
+        color: $font-color-light;
+        width: 80px;
+        margin-top: 1rem;
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+    }
+}

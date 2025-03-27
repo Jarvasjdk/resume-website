@@ -1,0 +1,26 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+@import "./abstracts/keyframes";
+
+@import "./base/base";
+
+@import "./components/buttons";
+@import "./components/hamburger";
+@import "./components/skills_card";
+@import "./components/project_card";
+
+@import "./layout/grid";
+@import "./layout/header";
+@import "./layout/banner";
+@import "./layout/skills";
+@import "./layout/projects";
+@import "./layout/contact";
+@import "./layout/footer";
+@import "./layout/timeline";
+
+
+
+

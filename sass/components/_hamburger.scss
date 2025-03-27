@@ -1,0 +1,29 @@
+
+/* Hamburger ANIMATION */
+/* The middle bar */
+.hamburger-btn {
+    width: 31px;
+    height: 3px;
+    background-color: $font-color-light;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+
+    /* Making 2 more bars, 1 above, 1 below */
+    &::before, &::after {
+        content: '';
+        position: absolute;
+
+        width: 31px;
+        height: 3px;
+        background-color: white;
+        border-radius: 5px;
+        transition: all 0.5s ease-in-out;
+    }
+    /* Position the two bars */
+    &::before {
+        transform: translateY(-10px);
+    }
+    &::after {
+        transform: translateY(10px);
+    }
+}

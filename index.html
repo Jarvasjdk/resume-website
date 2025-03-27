@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nathan Davis | Front End Engineer</title>
+        <link href="./sass/main.css" rel="stylesheet">
+        <script src="main.js" async></script>
+        <!-- Google fonts for logo -->
+        <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+        <!-- Fontawesome icons CDN -->
+        <script src="https://kit.fontawesome.com/c838459338.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="grid-container">
+            <header class="header">
+                <nav class="nav-bar" id="my-nav-bar">
+                    <a class="nav-bar__link nav-bar__link--logo" href="#">ND</a>
+                    <a class="nav-bar__link" href="#banner">Home</a>
+                    <a class="nav-bar__link" href="#timeline">Work</a>
+                    <a class="nav-bar__link" href="#skills">Skills</a>
+                    <a class="nav-bar__link" href="#projects">Projects</a>
+                    <a class="nav-bar__link" href="#contact">Contact</a>
+                    <a class="nav-bar__link nav-bar__link--hamburger" href="javascript:void(0)">
+                        <div class="hamburger-btn"></div>
+                    </a>
+                </nav>
+            </header>
+            <section class="banner" id="banner">
+                <span class="banner__animated-text banner__animated-text--lt">&lt;</span>
+                <div class="banner__heading-box">
+                    <h2>Hey there, I'm
+                        <span>Nathan Davis</span>
+                    </h2>
+                    <h2>I'm a Software engineer
+                        <br> who enjoys learning new technologies
+                    </h2>
+                    <div class="banner__heading-box--btn-box">
+                        <a href="#projects" class="btn btn--see-project">SEE PROJECTS</a>
+                        <a href="#timeline" class="btn btn--view-work-experience">
+                            VIEW WORK EXPERIENCE
+                        </a>
+                    </div>
+                </div>
+                <span class="banner__animated-text banner__animated-text--gt">/&gt;</span>
+            </section>
+            <section class="timeline" id="timeline">
+                <div class="timeline__heading-box">
+                    <h2 class="timeline__heading-box--title">WORK EXPERIENCE</h2>
+                </div>
+                <div class="timeline__container">
+                    <div class="timeline__entry timeline__entry--right">
+                        <div class="timeline__card">
+                            <div class="timeline__card__date timeline__card__date--right">May 2022 - March 2025</div>
+                            <div class="timeline__card__content">
+                                <span class="timeline__card__content--company">Southwest Airlines</span>
+                                <h3 class="timeline__card__content--title">Software Engineer</h3>
+                                <div class="timeline__card__content--description">
+                                    <ul>
+                                        <li>
+                                            Implemented scalable software in TDD using Javascript, NodeJS, ReactJS, AWS, and Jira with primary
+											focus on building efficient micro-frontends while collaborating with teams to attain top tier system reliability.
+                                        </li>
+                                        <li>Implemented CI/CD pipelines using YAML to automate build, test, and deploy processes.</li>
+                                        <li>Mentored juniors and contributed to code reviews to deliver high-quality and efficient code.</li>
+                                    </ul>
+                                </div>
+                                <div class="timeline__card__content--icon">
+                                    <i class="fas fa-plane"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline__entry timeline__entry--left">
+                        <div class="timeline__card">
+                            <div class="timeline__card__date timeline__card__date--left">Jan 2022 - April 2022</div>
+                            <div class="timeline__card__content">
+                                <span class="timeline__card__content--company">Morsco HVAC Supply</span>
+                                <h3 class="timeline__card__content--title">Software Developer Intern</h3>
+                                <div class="timeline__card__content--description">
+                                    <ul>
+                                        <li>Implemented UI/UX requirements given by designers using Jira, ReactJS, and Typescript.</li>
+                                        <li>Agile sprint meetups discussing sprint planning, review, testing, and retrospective.</li>
+                                    </ul>
+                                </div>
+                                <div class="timeline__card__content--icon">
+                                    <i class="fas fa-fan"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="skills" id="skills">
+                <div class="skills__content-box">
+                    <div class="skills-card">
+                        <i class="skills-card__icon far fa-window-restore"></i>
+                        <h3 class="skills-card__heading">Front-End</h3>
+                        <p class="skills-card__text">
+                            HTML5
+                            <br>
+                            CSS3 | Sass
+                            <br>
+                            JavaScript | Typescript
+                            <br>
+                            ReactJS | VueJS
+                            <br>
+                            Angular (12+)
+                        </p>
+                    </div>
+                    <div class="skills-card">
+                        <i class="skills-card__icon fas fa-server"></i>
+                        <h3 class="skills-card__heading">Server</h3>
+                        <p class="skills-card__text">
+                            Spring Boot
+                            <br>
+                            Java
+                            <br>
+                            NodeJS
+                            <br>
+                        </p>
+                    </div>
+                    <div class="skills-card">
+                        <i class="skills-card__icon fas fa-database"></i>
+                        <h3 class="skills-card__heading">Database</h3>
+                        <p class="skills-card__text">
+                            MySQL
+                            <br>
+                            Firebase
+                            <br>
+                            DynamoDB
+                            <br>
+                            S3
+                        </p>
+                    </div>
+                    <div class="skills-card">
+                        <i class="skills-card__icon fas fa-code"></i>
+                        <h3 class="skills-card__heading">Other</h3>
+                        <p class="skills-card__text">
+                            Git | Github/Gitlab
+                            <br>
+                            AWS services
+                            <br>
+                            Agile Scrum
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="projects" id="projects">
+                <div class="projects__heading-box">
+                    <p>PROJECT PORTFOLIO</p>
+                </div>
+                <div class="projects__content-box">
+                    <div class="project__card">
+                        <div class="project__card__inner-card">
+                            <div class="project__card__inner-card__text-box">
+                                <h3 class="project-title">Analytic Hierarchy Process Tool</h3>
+                                <p class="project-description">
+                                    Capstone project where the app takes an input for a goal and generates a report based on certain objectives
+                                </p>
+                                <div class="tech-stack-box">
+                                    <div class="tech-stack-box__languages-box">
+                                        VueJS
+                                        <hr>
+                                        Python
+                                        <hr>
+                                        AWS Lambda & DynamoDB
+                                    </div>
+                                    <i class="tech-stack-box__icon tech-stack-box__icon--i1">
+                                        <img src="./assets/images/AHP.png" alt="logo">
+                                    </i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project__card">
+                        <div class="project__card__inner-card">
+                            <div class="project__card__inner-card__text-box">
+                                <h3 class="project-title">Portfolio Website</h3>
+                                <p class="project-description">
+                                    My portfolio that uses Neumorphism, a soft UI design.
+									It is responsive and mobile-friendly
+                                </p>
+                                <div class="tech-stack-box">
+                                    <div class="tech-stack-box__languages-box">
+                                        JavaScript
+                                        <hr>
+                                        CSS|Sass
+                                        <hr>
+                                        HTML
+                                    </div>
+                                    <i class="tech-stack-box__icon tech-stack-box__icon--i2 far fa-address-book"></i>
+                                </div>
+                                <a class="btn btn--src-code" href="https://github.com/Jarvasjdk/resume-website" target="_blank">
+                                    Source
+									Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project__card">
+                        <div class="project__card__inner-card">
+                            <div class="project__card__inner-card__text-box">
+                                <h3 class="project-title">Bug-Tracker Web App</h3>
+                                <p class="project-description">
+                                    A Ticketing management tool for admins, managers, and users.
+                                </p>
+                                <div class="tech-stack-box">
+                                    <div class="tech-stack-box__languages-box">
+                                        Java|Spring Boot
+                                        <hr>
+                                        Angular
+                                        <hr>
+                                        SQL|Hibernate
+                                        <hr>
+                                    </div>
+                                    <i class="tech-stack-box__icon tech-stack-box__icon--i3 fa fa-bug"></i>
+                                </div>
+                                <a class="btn btn--src-code" href="https://github.com/Jarvasjdk/Bug_Management_Tracker" target="_blank">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project__card">
+                        <div class="project__card__inner-card">
+                            <div class="project__card__inner-card__text-box">
+                                <h3 class="project-title">COVID-19 Review App</h3>
+                                <p class="project-description">An app I helped build with friends where I created CRUD operations to store and query reviews assigned to a store</p>
+                                <div class="tech-stack-box">
+                                    <div class="tech-stack-box__languages-box">
+                                        Dart
+                                        <hr>
+                                        Firebase
+                                        <hr>
+                                        Flutter
+                                    </div>
+                                    <i class="tech-stack-box__icon tech-stack-box__icon--i4">
+                                        <img src="./assets/images/covid-logo.png" alt="covid-logo">
+                                    </i>
+                                </div>
+                                <a class="btn btn--src-code" href="https://github.com/michael99hernan/Covid-Reviews" target="_blank">
+                                    Source
+									Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="contact" id="contact">
+                <div class="contact__heading-box">
+                    <p>CONTACT ME</p>
+                </div>
+                <div class="contact__content-box">
+                    <div class="contact-info-box">
+                        <div>
+                            <div class="contact-info-box__sm-box">
+                                <div class="icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <p>nathanaeladavis@gmail.com</p>
+                            </div>
+                            <div class="contact-info-box__sm-box">
+                                <div class="icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <p>214-771-5286</p>
+                            </div>
+                            <div class="contact-info-box__sm-box">
+                                <div class="icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <p>Dallas, Texas</p>
+                            </div>
+                        </div>
+                        <hr class="contact-info-box__social-media-hr">
+                    </div>
+                    <form class="email-form" autocomplete="off">
+                        <h3 class="email-form__heading">Get in touch</h3>
+                        <div class="email-form__field email-form__field--name">
+                            <i class="form fas fa-user"></i>
+                            <input name="name" type="text" placeholder="Name">
+                        </div>
+                        <div class="email-form__field email-form__field--email">
+                            <i class="fas fa-envelope"></i>
+                            <input name="name" type="email" placeholder="Email">
+                        </div>
+                        <div class="email-form__field email-form__field--message">
+                            <i class="fas fa-comment"></i>
+                            <textarea name="name" placeholder="Your Message"></textarea>
+                        </div>
+                        <button class="btn btn--send-message" type="button">Send</button>
+                    </form>
+                </div>
+            </section>
+            <footer class="copyright-box">
+                <p>Copyright &copy; 2025 Nathan. All Right Reserved</p>
+            </footer>
+        </div>
+    </body>
+</html>

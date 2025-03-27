@@ -1,0 +1,104 @@
+/* This creates a "flat card" */
+.project__card {
+    position: relative;
+    width: 320px;
+    height: 440px;
+    margin: 45px;
+
+    border-radius: 27px;
+    background: $background-color-light;
+    box-shadow:
+        6px 6px 12px #c9c9c9,
+        -6px -6px 12px #ffffff;
+
+    /* This creates a "pressed card" on the "flat card" */
+    &__inner-card {
+        /* This makes all sides of the inner-card 10px away from the outer-card */
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        bottom: 10px;
+        left: 10px;
+        border-radius: 16px;
+        box-shadow:
+            inset 6px 6px 12px #c9c9c9,
+            inset -6px -6px 12px #ffffff;
+
+        &__text-box {
+            /* This makes all sides of the text-box 12px away from the inner-card, thus, the text-box size will change based on the card size */
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            bottom: 12px;
+            left: 12px;
+
+            text-align: center;
+            border-radius: 16px;
+            transition: 0.4s;
+
+            // The text box floats up on hover
+            &:hover {
+                transform: translateY(-10px) scale(1.05);
+                box-shadow: 0 40px 70px rgba(0, 0, 0, 0.5);
+                background-color: #f8f8f8; /* A bit whiter than the bg */
+            }
+
+            .project-title {
+                height: 55px;
+                margin: 15px 15px 10px;
+                color: $background-color-dark;
+            }
+            .project-description {
+                height: 120px;
+                font-size: 1rem;
+                color: #3a3a3a;
+                margin: 10px 15px;
+            }
+            .tech-stack-box {
+                display: flex;
+                color: $background-color-dark;
+                margin-left: 2rem;
+                margin-bottom: 2rem;
+
+                &__languages-box {
+                    height: 100px;
+                    width: 100px;
+                    margin-bottom: 0;
+                    font-weight: 600;
+
+                    hr {
+                        opacity: 0.6;
+                    }
+                }
+                &__icon {
+                    font-size: 60px;
+                    margin-top: 0.8rem;
+                    margin-left: 3rem;
+
+                    &--i1 {
+                        color: none;
+                        img {
+                            width: 80px;
+                            height: 80px;
+                        }
+                    }
+                    &--i2 {
+                        color: rgb(254, 156, 172);
+                    }
+                    &--i3 {
+                        color: rgb(1, 74, 1);
+                    }
+                    &--i4 {
+                        color: none;
+                        img {
+                            width: 80px;
+                            height: 60px;
+                            margin-right: 2rem;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

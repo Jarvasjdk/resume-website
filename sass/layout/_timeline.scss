@@ -1,0 +1,485 @@
+.timeline {
+  grid-area: Timeline;
+  min-height: 100vh;
+  background-color: #2b2b2b;
+  color: white;
+  padding: 50px 0;
+  overflow-x: hidden;
+}
+.timeline__heading-box {
+  text-align: center;
+  padding-top: 70px;
+}
+.timeline__heading-box--title {
+  font-size: 2.3rem;
+  font-weight: 500;
+  margin-bottom: 90px;
+}
+.timeline__heading-box--subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 60px;
+}
+.timeline__container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+.timeline__container::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 6px;
+  box-shadow:
+    inset 2px 2px 4px rgba(0, 0, 0, 0.3),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.05);
+}
+.timeline__entry {
+  margin-bottom: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.timeline__entry::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #659cbf;
+  border-radius: 50%;
+  z-index: 2;
+  left: 50%;
+  top: 30px;
+  transform: translateX(-50%);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    inset 2px 2px 3px rgba(255, 255, 255, 0.2),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.2);
+}
+.timeline__entry--left .timeline__card {
+  margin-right: calc(50% + 30px);
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+.timeline__entry--left .timeline__card.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+.timeline__entry--right .timeline__card {
+  margin-left: calc(50% + 30px);
+  transform: translateX(100px);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+.timeline__entry--right .timeline__card.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+.timeline__card {
+  width: 45%;
+  padding: 30px;
+  background-color: #2b2b2b;
+  border-radius: 20px;
+  box-shadow:
+    8px 8px 16px #232323,
+    -8px -8px 16px #333333;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.timeline__card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    10px 10px 20px #1f1f1f,
+    -10px -10px 20px #373737;
+}
+.timeline__card__date {
+  position: absolute;
+  top: -15px;
+  background: #659cbf;
+  color: #2b2b2b;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.timeline__card__date--left {
+  right: 20px;
+}
+.timeline__card__date--right {
+  left: 20px;
+}
+.timeline__card__content {
+  margin-top: 15px;
+}
+.timeline__card__content--company {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 15px;
+}
+.timeline__card__content--title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: white;
+}
+.timeline__card__content--description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+.timeline__card__content--description ul {
+  padding-left: 20px;
+}
+.timeline__card__content--description ul li {
+  margin-bottom: 10px;
+}
+.timeline__card__content--description ul li::before {
+  content: "•";
+  color: #659cbf;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+.timeline__card__content--icon {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:
+    3px 3px 5px rgba(0, 0, 0, 0.2),
+    -2px -2px 5px rgba(255, 255, 255, 0.05);
+}
+.timeline__card__content--icon i {
+  font-size: 18px;
+  color: #659cbf;
+}
+@media (max-width: 1170px) {
+  .timeline__container::before {
+    left: 30px;
+  }
+  .timeline__entry::after {
+    left: 30px;
+    transform: none;
+  }
+  .timeline__entry--left .timeline__card,
+  .timeline__entry--right .timeline__card {
+    width: calc(100% - 80px);
+    margin-left: 80px;
+    margin-right: 0;
+  }
+  .timeline__card__date--left,
+  .timeline__card__date--right {
+    left: 20px;
+    right: auto;
+  }
+}
+@media (max-width: 768px) {
+  .timeline__card {
+    padding: 20px;
+  }
+  .timeline__card__content--title {
+    font-size: 1.3rem;
+  }
+  .timeline__card__content--description {
+    font-size: 0.9rem;
+  }
+} /*# sourceMappingURL=main.css.map */
+
+// .timeline {
+//     grid-area: Timeline;
+//     min-height: 100vh;
+//     background-color: $background_color-dark;
+//     color: $font_color-light;
+//     padding: 50px 0;
+//     overflow-x: hidden; // Prevent horizontal scroll during animations
+
+//     &__heading-box {
+//         text-align: center;
+//         padding-top: 70px;
+
+//         &--title {
+//             font-size: 2.3rem;
+//             font-weight: 500;
+//             margin-bottom: 10px;
+//         }
+
+//         &--subtitle {
+//             font-size: 1.2rem;
+//             font-weight: 300;
+//             color: rgba(255, 255, 255, 0.7);
+//             margin-bottom: 60px;
+//         }
+//     }
+
+//     &__container {
+//         position: relative;
+//         max-width: 1200px;
+//         margin: 0 auto;
+//         padding: 0 30px;
+
+//         // Vertical line
+//         &::before {
+//             content: '';
+//             position: absolute;
+//             width: 6px;
+//             background-color: rgba(255, 255, 255, 0.1);
+//             top: 0;
+//             bottom: 0;
+//             left: 50%;
+//             transform: translateX(-50%);
+//             border-radius: 6px;
+//             box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3),
+//                        inset -2px -2px 4px rgba(255, 255, 255, 0.05);
+//         }
+//     }
+
+//     &__entry {
+//         margin-bottom: 80px;
+//         width: 100%;
+//         display: flex;
+//         justify-content: center;
+//         position: relative;
+
+//         // Timeline markers (circles)
+//         &::after {
+//             content: '';
+//             position: absolute;
+//             width: 20px;
+//             height: 20px;
+//             background-color: $icon_color-main;
+//             border-radius: 50%;
+//             z-index: 2;
+//             left: 50%;
+//             top: 30px;
+//             transform: translateX(-50%);
+//             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3),
+//                       inset 2px 2px 3px rgba(255, 255, 255, 0.2),
+//                       inset -2px -2px 3px rgba(0, 0, 0, 0.2);
+//         }
+
+//         // Left/right alternating layout
+//         &--left {
+//             .timeline__card {
+//                 margin-right: calc(50% + 30px);
+//                 transform: translateX(-100px);
+//                 opacity: 0;
+//                 transition: all 0.8s ease;
+
+//                 &.visible {
+//                     transform: translateX(0);
+//                     opacity: 1;
+//                 }
+//             }
+//         }
+
+//         &--right {
+//             .timeline__card {
+//                 margin-left: calc(50% + 30px);
+//                 transform: translateX(100px);
+//                 opacity: 0;
+//                 transition: all 0.8s ease;
+
+//                 &.visible {
+//                     transform: translateX(0);
+//                     opacity: 1;
+//                 }
+//             }
+//         }
+//     }
+
+//     &__card {
+//         width: 45%;
+//         padding: 30px;
+//         background-color: $background_color-dark;
+//         border-radius: 20px;
+//         box-shadow: 8px 8px 16px #232323,
+//                   -8px -8px 16px #333333;
+//         position: relative;
+//         transition: transform 0.3s ease;
+
+//         &:hover {
+//             transform: translateY(-5px);
+//             box-shadow: 10px 10px 20px #1f1f1f,
+//                       -10px -10px 20px #373737;
+//         }
+
+//         &__date {
+//             position: absolute;
+//             top: -15px;
+//             background: $icon_color-main;
+//             color: $background_color-dark;
+//             padding: 8px 20px;
+//             border-radius: 30px;
+//             font-weight: 500;
+//             font-size: 0.9rem;
+//             box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+
+//             &--left {
+//                 right: 20px;
+//             }
+
+//             &--right {
+//                 left: 20px;
+//             }
+//         }
+
+//         &__content {
+//             margin-top: 15px;
+
+//             &--company {
+//                 display: inline-block;
+//                 padding: 5px 12px;
+//                 border-radius: 15px;
+//                 font-size: 0.85rem;
+//                 background-color: rgba(255, 255, 255, 0.05);
+//                 border: 1px solid rgba(255, 255, 255, 0.1);
+//                 margin-bottom: 15px;
+//             }
+
+//             &--title {
+//                 font-size: 1.5rem;
+//                 font-weight: 600;
+//                 margin-bottom: 15px;
+//                 color: white;
+//             }
+
+//             &--description {
+//                 font-size: 1rem;
+//                 line-height: 1.6;
+//                 color: rgba(255, 255, 255, 0.8);
+
+//                 ul {
+//                     padding-left: 20px;
+
+//                     li {
+//                         margin-bottom: 10px;
+
+//                         &::before {
+//                             content: "•";
+//                             color: $icon_color-main;
+//                             display: inline-block;
+//                             width: 1em;
+//                             margin-left: -1em;
+//                         }
+//                     }
+//                 }
+//             }
+
+//             &--icon {
+//                 position: absolute;
+//                 top: 25px;
+//                 right: 25px;
+//                 width: 40px;
+//                 height: 40px;
+//                 background-color: rgba(0, 0, 0, 0.2);
+//                 border-radius: 50%;
+//                 @include flex_center;
+//                 box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2),
+//                           -2px -2px 5px rgba(255, 255, 255, 0.05);
+
+//                 i {
+//                     font-size: 18px;
+//                     color: $icon_color-main;
+//                 }
+//             }
+//         }
+//     }
+
+//     // Responsive styles
+//     @media (max-width: 1170px) {
+//         &__container {
+//             &::before {
+//                 left: 30px;
+//             }
+//         }
+
+//         &__entry {
+//             &::after {
+//                 left: 30px;
+//                 transform: none;
+//             }
+
+//             &--left, &--right {
+//                 .timeline__card {
+//                     width: calc(100% - 80px);
+//                     margin-left: 80px;
+//                     margin-right: 0;
+//                 }
+//             }
+//         }
+
+//         &__card {
+//             &__date {
+//                 &--left, &--right {
+//                     left: 20px;
+//                     right: auto;
+//                 }
+//             }
+//         }
+//     }
+
+//     // Mobile styles
+//     @media (max-width: 768px) {
+//         &__card {
+//             padding: 20px;
+
+//             &__content {
+//                 &--title {
+//                     font-size: 1.3rem;
+//                 }
+
+//                 &--description {
+//                     font-size: 0.9rem;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// // Add this to main.js to handle the scroll animations
+// // ====================================================
+// // function handleTimelineAnimation() {
+// //     const timelineCards = document.querySelectorAll('.timeline__card');
+// //
+// //     const checkScroll = () => {
+// //         timelineCards.forEach(card => {
+// //             const cardTop = card.getBoundingClientRect().top;
+// //             const triggerPosition = window.innerHeight * 0.8;
+// //
+// //             if (cardTop < triggerPosition) {
+// //                 card.classList.add('visible');
+// //             }
+// //         });
+// //     };
+// //
+// //     // Initial check
+// //     checkScroll();
+// //
+// //     // Check on scroll
+// //     window.addEventListener('scroll', checkScroll);
+// // }
+// //
+// // // Add to existing ready function
+// // if (document.querySelector('.timeline')) {
+// //     handleTimelineAnimation();
+// // }

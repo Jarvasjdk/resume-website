@@ -1,0 +1,37 @@
+
+.skills-card {
+    height: 320px;
+    width: 220px;
+    margin: 30px;
+    background-color: $background_color-dark;
+    box-shadow:  7px 7px 8px #252525,
+                -7px -7px 8px #3f3f3f; 
+    border-radius: 0.5rem;
+    transition: all 0.5s;
+
+
+    /* Change the shape of the card from outwards to inwards on hover */
+    &:hover {
+        box-shadow: inset 20px 20px 10px #252525,
+                    inset -20px -20px 10px #313131;
+    }
+
+    &__icon {
+        font-size: 60px;
+        color: $icon_color-main;
+        margin: 40px 0 20px;
+    }
+
+    &__heading {
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+
+
+    /*Responsive*/
+    @media (max-width: 1000px) {
+        width: 300px;
+    }
+
+}
